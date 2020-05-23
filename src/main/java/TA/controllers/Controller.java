@@ -66,7 +66,7 @@ public class Controller {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("register.fxml"));
         Stage resisterStage = new Stage();
         resisterStage.setTitle("Welcome!");
-        resisterStage.setScene(new Scene(root, 350, 275, Color.CYAN));
+        resisterStage.setScene(new Scene(root, 350, 275));
         resisterStage.show();
     }
 }
