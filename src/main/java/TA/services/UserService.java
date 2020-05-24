@@ -19,12 +19,12 @@ import java.util.Objects;
 public class UserService {
 
     private static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
+    private static final Path USERS_PATH = FileSystemService.getPathToFile("TAusers.json");
 
     public static void loadUsersFromFile() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
-            FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
+            FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("TAusers.json"), USERS_PATH.toFile());
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -39,12 +39,18 @@ public class UserService {
         persistUsers();
     }
 
-    public static void logUser(String username, String password, String role){
-        for(User user : users){
-            if (Objects.equals(username, user.getUsername()))
-                System.out.println("Hello! ^_^\n");
-        }
+    public boolean containsUser(User user)
+    {
+        return users.contains(user);
     }
+
+    /*public static boolean logUser(){
+        User user = new User(.getText(), database.encodePassword(namefield.getText(), passwordfield.getText()), rolefield.getValue());
+        if(!users.contains(user)){
+            return false;
+        }
+        return true;
+    }*/
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (User user : users) {
@@ -62,15 +68,14 @@ public class UserService {
         }
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
         byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
 
-        // This is the way a password should be encoded when checking the credentials
         return new String(hashedPassword, StandardCharsets.UTF_8)
-                .replace("\"", ""); //to be able to save in JSON format
+                .replace("\"", "");
     }
 
     private static MessageDigest getMessageDigest() {
