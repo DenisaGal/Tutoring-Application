@@ -33,11 +33,7 @@
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
                         <manifest>
-<<<<<<< HEAD
                             <mainClass>TA.Main</mainClass>
-=======
-                            <mainClass>org.loose.fis.registration.example.Main</mainClass>
->>>>>>> 9fe96ed288e82ecb9bcc62270b1674b669014667
                         </manifest>
                     </archive>
                     <appendAssemblyId>false</appendAssemblyId>

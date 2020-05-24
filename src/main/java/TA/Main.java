@@ -19,8 +19,8 @@ public class Main extends Application {
         UserService.loadUsersFromFile();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("StartWindow.fxml"));
-        primaryStage.setTitle("Welcome!");
-        primaryStage.setScene(new Scene(root, 350, 275, Color.CYAN));
+        primaryStage.setTitle("Tutoring Application");
+        primaryStage.setScene(new Scene(root, 350, 275));
         primaryStage.show();
     }
 }

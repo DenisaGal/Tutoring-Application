@@ -7,6 +7,7 @@ public class User {
     private String phone_number;
     private String password;
     private String role;
+    private String subject;
 
     public User() {
     }
@@ -15,6 +16,12 @@ public class User {
         this.username = username;
         this.email_address = email_address;
         this.phone_number = phone_number;
+        this.password = password;
+        this.role = role;
+    }
+
+    public User(String username, String password, String role) {
+        this.username = username;
         this.password = password;
         this.role = role;
     }
@@ -59,8 +66,18 @@ public class User {
         this.role = role;
     }
 
+    public String getSubject(){ return subject;}
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
+        return (o instanceof User) && ( ((User) o).username.equals(this.username) && ((User) o).password.equals(this.password) && ((User) o).role.equals(this.role));
+    }
+    /*public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -69,7 +86,7 @@ public class User {
         if (!username.equals(user.username)) return false;
         if (!password.equals(user.password)) return false;
         return role.equals(user.role);
-    }
+    }*/
 
     @Override
     public int hashCode() {
