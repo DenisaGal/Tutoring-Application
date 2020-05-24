@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="Menu" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #266196;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TA.controllers.TutorMenuController">
+   <children>
+      <Text fill="WHITE" layoutX="102.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subjects: " textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="18.0" />
+         </font>
+      </Text>
+      <CheckBox id="art" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" text="Art" textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="biology" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="71.0" mnemonicParsing="false" text="Biology" textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="chemestry" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="101.0" mnemonicParsing="false" text="Chemestry" textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="english" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="131.0" mnemonicParsing="false" text="English" textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="history" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="161.0" mnemonicParsing="false" text="History" textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="math" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="192.0" mnemonicParsing="false" text="Math" textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="physics" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="221.0" mnemonicParsing="false" text="Physics" textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="programming" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="251.0" mnemonicParsing="false" text="Programming" textAlignment="CENTER" textFill="#fffefe">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <Button id="addProof" layoutX="60.0" layoutY="282.0" mnemonicParsing="false" text="Add proof of qualification">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button id="seeReviews" layoutX="100.0" layoutY="319.0" mnemonicParsing="false" text="See Reviews">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button id="Chat" layoutX="113.0" layoutY="357.0" mnemonicParsing="false" text="Chat">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
