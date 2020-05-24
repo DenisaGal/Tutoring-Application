@@ -64,18 +64,21 @@ public class StartController {
             passwordField.clear();
         }
         else {
+            Stage menuStage = new Stage();
             if((role.getValue()).equals("Learner")){
                 Menu = FXMLLoader.load(getClass().getClassLoader().getResource("LearnerMenu.fxml"));
+                menuStage.setScene(new Scene(Menu, 200, 250));
             }
             if((role.getValue()).equals("Tutor")){
-                Menu = FXMLLoader.load(getClass().getClassLoader().getResource("LearnerMenu.fxml"));
+                Menu = FXMLLoader.load(getClass().getClassLoader().getResource("TutorMenu.fxml"));
+                menuStage.setScene(new Scene(Menu, 250, 400));
             }
             Stage startStage = (Stage) LogInButton.getScene().getWindow();
             startStage.close();
 
-            Stage menuStage = new Stage();
-            menuStage.setScene(new Scene(Menu, 200, 250));
-            menuStage.setTitle("Learner Menu");
+            //Stage menuStage = new Stage();
+            //menuStage.setScene(new Scene(Menu, 250, 400));
+            menuStage.setTitle("Menu");
             menuStage.show();
         }
     }

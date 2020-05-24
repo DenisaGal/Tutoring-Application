@@ -10,6 +10,6 @@ public class LearnerMenuController {
 
     @FXML
     public void initialize(){
-        subject.getItems().addAll("English", "Math", "Art", "Programming", "Physics", "Chemestry", "Biology", "History");
+        subject.getItems().addAll("Art", "Biology", "Chemestry", "English", "History", "Math", "Physics", "Programming");
     }
 }
