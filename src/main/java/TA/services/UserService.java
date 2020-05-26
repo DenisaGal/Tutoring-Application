@@ -38,7 +38,13 @@ public class UserService {
         users.add(new User(username, email_address, phone_number, encodePassword(username, password), role));
         persistUsers();
     }
-
+    public static void addSubject(String username, String subject){
+        for(User user : users){
+            if(Objects.equals(username, user.getUsername())){
+                user.setSubject(subject);
+            }
+        }
+    }
     public boolean containsUser(User user)
     {
         return users.contains(user);
@@ -59,6 +65,8 @@ public class UserService {
             throw new CouldNotWriteUsersException();
         }
     }
+
+    public static List<User> getUsers() {return users;}
 
     public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
