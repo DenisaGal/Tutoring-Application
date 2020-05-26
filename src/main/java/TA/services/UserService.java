@@ -38,19 +38,18 @@ public class UserService {
         users.add(new User(username, email_address, phone_number, encodePassword(username, password), role));
         persistUsers();
     }
-
+    public static void addSubject(String username, String subject){
+        for(User user : users){
+            if(Objects.equals(username, user.getUsername())){
+                user.setSubject(subject);
+                persistUsers();
+            }
+        }
+    }
     public boolean containsUser(User user)
     {
         return users.contains(user);
     }
-
-    /*public static boolean logUser(){
-        User user = new User(.getText(), database.encodePassword(namefield.getText(), passwordfield.getText()), rolefield.getValue());
-        if(!users.contains(user)){
-            return false;
-        }
-        return true;
-    }*/
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (User user : users) {
@@ -67,6 +66,8 @@ public class UserService {
             throw new CouldNotWriteUsersException();
         }
     }
+
+    public static List<User> getUsers() {return users;}
 
     public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();

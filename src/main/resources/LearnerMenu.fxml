@@ -7,14 +7,28 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="Menu" prefHeight="250.0" prefWidth="200.0" style="-fx-background-color: #266196;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TA.controllers.LearnerMenuController">
-   <children>
-      <Button id="seeTutors" alignment="CENTER" layoutX="67.0" layoutY="113.0" mnemonicParsing="false" text="See tutors" />
-      <Button id="Chat" alignment="CENTER" layoutX="80.0" layoutY="161.0" mnemonicParsing="false" text="Chat" />
-       <Label id="subjectText" layoutX="72.0" layoutY="24.0" text="Subject:" textFill="#fffefe">
-         <font>
-            <Font name="Times New Roman Bold Italic" size="18.0" />
-         </font></Label>
-       <ChoiceBox id="subject" fx:id="subject" layoutX="27.0" layoutY="59.0" prefWidth="150.0" />
-      <Button id="Feedback" layoutX="57.0" layoutY="205.0" mnemonicParsing="false" text="See feedback" />
-   </children>
+    <children>
+        <Button fx:id="seeTutors" alignment="CENTER" layoutX="71.0" layoutY="133.0" mnemonicParsing="false" text="See tutors">
+            <font>
+                <Font name="Times New Roman Bold Italic" size="12.0" />
+            </font></Button>
+        <Button fx:id="Chat" alignment="CENTER" layoutX="81.0" layoutY="174.0" mnemonicParsing="false" text="Chat">
+            <font>
+                <Font name="Times New Roman Bold Italic" size="12.0" />
+            </font></Button>
+        <Label fx:id="subjectText" layoutX="73.0" layoutY="14.0" text="Subject:" textFill="#fffefe">
+            <font>
+                <Font name="Times New Roman Bold Italic" size="18.0" />
+            </font></Label>
+        <ChoiceBox id="subject" fx:id="subject" layoutX="25.0" layoutY="45.0" prefWidth="150.0" />
+        <Button fx:id="Feedback" layoutX="61.0" layoutY="214.0" mnemonicParsing="false" text="See feedback">
+            <font>
+                <Font name="Times New Roman Bold Italic" size="12.0" />
+            </font></Button>
+        <Button fx:id="setSubject" layoutX="68.0" layoutY="93.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#setSubjectPressed" text="Set Subject">
+            <font>
+                <Font name="Times New Roman Bold Italic" size="12.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

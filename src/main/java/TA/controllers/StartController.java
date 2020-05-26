@@ -5,10 +5,7 @@ import TA.model.User;
 import TA.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.fxml.FXMLLoader;
@@ -51,8 +48,14 @@ public class StartController {
         try {
             users.addUser(usernameField.getText(), email_addressField.getText(), phone_numberField.getText(), passwordField.getText(), (String) role.getValue());
             registrationMessage.setText("The account was created successfully! ^_^");
+            Stage registerStage = (Stage) RegisterButton.getScene().getWindow();
+            registerStage.close();
+            woops.display("Register was succesfull", "Account was created successfully!\n \t   Now you can log in \n \t and start learning ^_^");
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
+            Stage registerStage = (Stage) RegisterButton.getScene().getWindow();
+            //registerStage.close();
+            woops.display("Register failed", "An account with this username\n \t     already exists :(\n      Please find another one");
         }
     }
 
@@ -66,7 +69,11 @@ public class StartController {
         else {
             Stage menuStage = new Stage();
             if((role.getValue()).equals("Learner")){
-                Menu = FXMLLoader.load(getClass().getClassLoader().getResource("LearnerMenu.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("LearnerMenu.fxml"));
+                Menu = loader.load();
+                LearnerMenuController learner = loader.getController();
+                learner.setUsername(usernameField.getText());
+                learner.setUsersList(users);
                 menuStage.setScene(new Scene(Menu, 200, 250));
             }
             if((role.getValue()).equals("Tutor")){
@@ -76,8 +83,6 @@ public class StartController {
             Stage startStage = (Stage) LogInButton.getScene().getWindow();
             startStage.close();
 
-            //Stage menuStage = new Stage();
-            //menuStage.setScene(new Scene(Menu, 250, 400));
             menuStage.setTitle("Menu");
             menuStage.show();
         }
@@ -85,9 +90,7 @@ public class StartController {
 
     public void startRegister(ActionEvent actionEvent) {
         Register();
-        Stage registerStage = (Stage) RegisterButton.getScene().getWindow();
-        registerStage.close();
-        woops.display("Register was succesfull", "Account was created successfully!\n Now you can log in \n and start learning ^_^");
+
     }
 
     public void startLogger(ActionEvent actionEvent) {
