@@ -16,6 +16,7 @@ public class LearnerMenuController {
 
     public String username;
     UserService users = new UserService();
+    Woopsie woops;
 
     public void setUsername(String username) {
         this.username = username;
@@ -27,5 +28,9 @@ public class LearnerMenuController {
 
     public void setSubjectPressed(ActionEvent actionEvent){
         users.addSubject(username, (String) subject.getValue());
+    }
+
+    public void seeFeedback(ActionEvent actionEvent) {
+        woops.display("Feedback", "You did not receive any feedback at this time."); //will be implemented after give feedback feature for tutor
     }
 }
