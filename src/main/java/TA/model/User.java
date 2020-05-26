@@ -1,5 +1,7 @@
 package TA.model;
 
+import java.util.ArrayList;
+
 public class User {
 
     private String username;
@@ -8,6 +10,7 @@ public class User {
     private String password;
     private String role;
     private String subject;
+    private ArrayList<String> subjects;
 
     public User() {
     }
@@ -70,6 +73,12 @@ public class User {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public ArrayList<String> getSubjects(){ return subjects; }
+
+    public void setSubjects(ArrayList<String> subjects) {
+        this.subjects = subjects;
     }
 
     @Override
