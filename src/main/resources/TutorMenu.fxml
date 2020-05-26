@@ -13,57 +13,62 @@
             <Font name="Times New Roman Bold Italic" size="18.0" />
          </font>
       </Text>
-      <CheckBox id="art" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" text="Art" textAlignment="CENTER" textFill="#fffefe">
+      <CheckBox fx:id="art" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="35.0" mnemonicParsing="false" text="Art" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox id="biology" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="71.0" mnemonicParsing="false" text="Biology" textAlignment="CENTER" textFill="#fffefe">
+      <CheckBox fx:id="biology" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="71.0" mnemonicParsing="false" text="Biology" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox id="chemestry" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="101.0" mnemonicParsing="false" text="Chemestry" textAlignment="CENTER" textFill="#fffefe">
+      <CheckBox fx:id="chemestry" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="101.0" mnemonicParsing="false" text="Chemestry" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox id="english" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="131.0" mnemonicParsing="false" text="English" textAlignment="CENTER" textFill="#fffefe">
+      <CheckBox fx:id="english" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="131.0" mnemonicParsing="false" text="English" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox id="history" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="161.0" mnemonicParsing="false" text="History" textAlignment="CENTER" textFill="#fffefe">
+      <CheckBox fx:id="history" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="161.0" mnemonicParsing="false" text="History" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox id="math" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="192.0" mnemonicParsing="false" text="Math" textAlignment="CENTER" textFill="#fffefe">
+      <CheckBox fx:id="math" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="192.0" mnemonicParsing="false" text="Math" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox id="physics" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="221.0" mnemonicParsing="false" text="Physics" textAlignment="CENTER" textFill="#fffefe">
+      <CheckBox fx:id="physics" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="221.0" mnemonicParsing="false" text="Physics" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <CheckBox id="programming" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="251.0" mnemonicParsing="false" text="Programming" textAlignment="CENTER" textFill="#fffefe">
+      <CheckBox fx:id="programming" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="251.0" mnemonicParsing="false" text="Programming" textAlignment="CENTER" textFill="#fffefe">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <Button id="addProof" layoutX="60.0" layoutY="282.0" mnemonicParsing="false" text="Add proof of qualification">
+      <Button id="addProof" layoutX="61.0" layoutY="312.0" mnemonicParsing="false" text="Add proof of qualification">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button id="seeReviews" layoutX="100.0" layoutY="319.0" mnemonicParsing="false" text="See Reviews">
+      <Button id="seeReviews" layoutX="100.0" layoutY="343.0" mnemonicParsing="false" text="See Reviews">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button id="Chat" layoutX="113.0" layoutY="357.0" mnemonicParsing="false" text="Chat">
+      <Button id="Chat" layoutX="113.0" layoutY="375.0" mnemonicParsing="false" text="Chat">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="setSubject" layoutX="99.0" layoutY="280.0" mnemonicParsing="false" onAction="#setSubjectsPressed" text="Set Subjects">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>

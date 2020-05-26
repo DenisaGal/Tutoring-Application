@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -38,7 +39,7 @@ public class UserService {
         users.add(new User(username, email_address, phone_number, encodePassword(username, password), role));
         persistUsers();
     }
-    public static void addSubject(String username, String subject){
+    public static void addSubject(String username, String subject){ //for learner (that can only pick one subject at a time)
         for(User user : users){
             if(Objects.equals(username, user.getUsername())){
                 user.setSubject(subject);
@@ -46,6 +47,16 @@ public class UserService {
             }
         }
     }
+
+    public static void addSubjects(String username, ArrayList<String> subjects){ //for tutor (that can pick one or more subjects at a time)
+        for(User user : users){
+            if(Objects.equals(username, user.getUsername())){
+                user.setSubjects(subjects);
+                persistUsers();
+            }
+        }
+    }
+
     public boolean containsUser(User user)
     {
         return users.contains(user);

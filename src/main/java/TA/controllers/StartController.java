@@ -77,7 +77,11 @@ public class StartController {
                 menuStage.setScene(new Scene(Menu, 200, 250));
             }
             if((role.getValue()).equals("Tutor")){
-                Menu = FXMLLoader.load(getClass().getClassLoader().getResource("TutorMenu.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("TutorMenu.fxml"));
+                Menu = loader.load();
+                TutorMenuController tutor = loader.getController();
+                tutor.setUsername(usernameField.getText());
+                tutor.setUsersList(users);
                 menuStage.setScene(new Scene(Menu, 250, 400));
             }
             Stage startStage = (Stage) LogInButton.getScene().getWindow();
