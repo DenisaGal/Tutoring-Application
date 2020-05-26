@@ -21,7 +21,7 @@
                 <Font name="Times New Roman Bold Italic" size="18.0" />
             </font></Label>
         <ChoiceBox id="subject" fx:id="subject" layoutX="25.0" layoutY="45.0" prefWidth="150.0" />
-        <Button fx:id="Feedback" layoutX="61.0" layoutY="214.0" mnemonicParsing="false" text="See feedback">
+        <Button fx:id="Feedback" layoutX="61.0" layoutY="214.0" mnemonicParsing="false" onAction="#seeFeedback" text="See feedback">
             <font>
                 <Font name="Times New Roman Bold Italic" size="12.0" />
             </font></Button>
