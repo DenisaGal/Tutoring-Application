@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="Menu" prefHeight="250.0" prefWidth="200.0" style="-fx-background-color: #266196;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TA.controllers.LearnerMenuController">
+<AnchorPane id="Menu" prefHeight="250.0" prefWidth="200.0" style="-fx-background-color: #266196;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TA.controllers.LearnerMenuController">
     <children>
-        <Button fx:id="seeTutors" alignment="CENTER" layoutX="71.0" layoutY="133.0" mnemonicParsing="false" text="See tutors">
+        <Button fx:id="seeTutors" alignment="CENTER" layoutX="71.0" layoutY="133.0" mnemonicParsing="false" onAction="#setTutorsNames" text="See tutors">
             <font>
                 <Font name="Times New Roman Bold Italic" size="12.0" />
             </font></Button>

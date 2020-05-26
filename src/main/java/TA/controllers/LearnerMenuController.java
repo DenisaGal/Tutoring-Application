@@ -30,6 +30,10 @@ public class LearnerMenuController {
         users.addSubject(username, (String) subject.getValue());
     }
 
+    public void setTutorsNames(ActionEvent actionEvent){
+        System.out.println("Teachers: " + users.addTutorsNames((String) subject.getValue()));
+    }
+
     public void seeFeedback(ActionEvent actionEvent) {
         woops.display("Feedback", "You did not receive any feedback at this time."); //will be implemented after give feedback feature for tutor
     }
