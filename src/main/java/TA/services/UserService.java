@@ -44,14 +44,6 @@ public class UserService {
         return users.contains(user);
     }
 
-    /*public static boolean logUser(){
-        User user = new User(.getText(), database.encodePassword(namefield.getText(), passwordfield.getText()), rolefield.getValue());
-        if(!users.contains(user)){
-            return false;
-        }
-        return true;
-    }*/
-
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()))

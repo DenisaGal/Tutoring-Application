@@ -2,7 +2,8 @@ package TA.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.AnchorPane;
+
+import javafx.event.ActionEvent;
 
 public class LearnerMenuController {
     @FXML
@@ -11,5 +12,9 @@ public class LearnerMenuController {
     @FXML
     public void initialize(){
         subject.getItems().addAll("Art", "Biology", "Chemestry", "English", "History", "Math", "Physics", "Programming");
+    }
+
+    public void setSubjectPressed(ActionEvent actionEvent){
+        System.out.println((String) subject.getValue());
     }
 }
