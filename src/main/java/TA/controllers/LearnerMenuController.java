@@ -1,5 +1,6 @@
 package TA.controllers;
 
+import TA.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -13,19 +14,18 @@ public class LearnerMenuController {
         subject.getItems().addAll("Art", "Biology", "Chemestry", "English", "History", "Math", "Physics", "Programming");
     }
 
-    //UserService users = (UserService) getUsersList();
-    
+    public String username;
+    UserService users = new UserService();
 
-    public void setSubjectPressed(ActionEvent actionEvent){
-        System.out.println((String) subject.getValue());
-        //users.addSubject(user_name, (String) subject.getValue());
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    /*public ObservableList<User> getUsersList() {
-        ObservableList<User> usersList = FXCollections.observableArrayList();
+    public void setUsersList(UserService users){
+        this.users = users;
+    }
 
-        usersList.addAll(UserService.getUsers());
-
-        return usersList;
-    }*/
+    public void setSubjectPressed(ActionEvent actionEvent){
+        users.addSubject(username, (String) subject.getValue());
+    }
 }

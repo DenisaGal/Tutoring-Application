@@ -42,6 +42,7 @@ public class UserService {
         for(User user : users){
             if(Objects.equals(username, user.getUsername())){
                 user.setSubject(subject);
+                persistUsers();
             }
         }
     }

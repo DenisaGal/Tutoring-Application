@@ -69,7 +69,11 @@ public class StartController {
         else {
             Stage menuStage = new Stage();
             if((role.getValue()).equals("Learner")){
-                Menu = FXMLLoader.load(getClass().getClassLoader().getResource("LearnerMenu.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("LearnerMenu.fxml"));
+                Menu = loader.load();
+                LearnerMenuController learner = loader.getController();
+                learner.setUsername(usernameField.getText());
+                learner.setUsersList(users);
                 menuStage.setScene(new Scene(Menu, 200, 250));
             }
             if((role.getValue()).equals("Tutor")){
