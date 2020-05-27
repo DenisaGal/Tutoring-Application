@@ -110,7 +110,7 @@ public class User {
             return false;
         }
         else{
-            return phone_number.matches("[0-9]")
+            return phone_number.matches("[0-9]+");
         }
     }
 

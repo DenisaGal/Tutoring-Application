@@ -46,7 +46,7 @@ public class StartController {
 
     public void Register() {
         User user = new User(usernameField.getText(), email_addressField.getText(), phone_numberField.getText(), UserService.encodePassword(usernameField.getText(), passwordField.getText()), (String) role.getValue());
-        if(user.checkUsername(user.getUsername()) && user.checkPassword(passwordField.getText())){
+        if(user.checkUsername(user.getUsername()) && user.checkPassword(passwordField.getText()) && (user.checkEmailAddress(email_addressField.getText())) && (user.checkPhoneNumber(phone_numberField.getText()))){
             try {
                 users.addUser(usernameField.getText(), email_addressField.getText(), phone_numberField.getText(), passwordField.getText(), (String) role.getValue());
                 registrationMessage.setText("The account was created successfully! ^_^");
@@ -60,7 +60,7 @@ public class StartController {
             }
         }
         else{
-            woops.display("Warning!", "The username must be between 5 - 25 characters\n \t (only letters and numbers allowed).\nThe password must be between 5 - 25 characters");
+            woops.display("Warning!", "The username must be between 5 - 25 characters\n \t (only letters and numbers allowed).\nThe password must be between 5 - 25 characters.\n The email address must be valid (contain @).\n The phone number must contain 10 digits.");
         }
     }
 
