@@ -28,14 +28,14 @@ import java.util.Objects;
 public class UserService {
 
     private static List<User> users;
-    //private static final Path USERS_PATH = FileSystemService.getPathToFile("TAusers.json");
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("users.json");
+    private static final Path USERS_PATH = FileSystemService.getPathToFile("TAusers.json");
+    //private static final Path USERS_PATH = FileSystemService.getPathToFile("users.json");
 
     public static void loadUsersFromFile() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
-            //FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("TAusers.json"), USERS_PATH.toFile());
-            FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
+            FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("TAusers.json"), USERS_PATH.toFile());
+            //FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
