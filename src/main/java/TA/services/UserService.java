@@ -115,9 +115,6 @@ public class UserService {
         table.setItems(listTutors);
 
         table.getColumns().addAll(nameColumn, emailColumn, phoneNumberColumn, reviewButtonColumn);
-        //yas.setOnAction(this);
-
-
 
         Stage tableStage = new Stage();
         tableStage.setScene(new Scene(table, 650, 300));
@@ -128,9 +125,7 @@ public class UserService {
 
     }
 
-    /*public void handle(ActionEvent actionEvent) {
-        System.out.println("YAS");
-    }*/
+
 
     public boolean containsUser(User user)
     {

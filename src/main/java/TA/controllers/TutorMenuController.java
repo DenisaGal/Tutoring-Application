@@ -3,6 +3,7 @@ package TA.controllers;
 import TA.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import java.util.ArrayList;
 
@@ -64,5 +65,32 @@ public class TutorMenuController {
             subjects.add("Programming");
         }
         users.addSubjects(username, subjects);
+    }
+
+    public void qualificationButton(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Add Proof Of Qualification");
+        alert.setHeaderText(null);
+        alert.setContentText("To be implemented soon");
+
+        alert.showAndWait();
+    }
+
+    public void seeReviewsButton(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("See Reviews");
+        alert.setHeaderText(null);
+        alert.setContentText("To be implemented soon");
+
+        alert.showAndWait();
+    }
+
+    public void chatButton(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Chat");
+        alert.setHeaderText(null);
+        alert.setContentText("To be implemented soon");
+
+        alert.showAndWait();
     }
 }
