@@ -20,7 +20,6 @@ class UserTest {
         assertFalse(user.checkPassword("Pls"));
     }
 
-
     @Test
     void checkEmailAddress() {
         User user = new User("Denisa","deni@yahoo.com", "0123456789", "PlsWork", "Learner");
