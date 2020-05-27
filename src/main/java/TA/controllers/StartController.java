@@ -45,17 +45,22 @@ public class StartController {
     public Button RegisterButton;
 
     public void Register() {
-        try {
-            users.addUser(usernameField.getText(), email_addressField.getText(), phone_numberField.getText(), passwordField.getText(), (String) role.getValue());
-            registrationMessage.setText("The account was created successfully! ^_^");
-            Stage registerStage = (Stage) RegisterButton.getScene().getWindow();
-            registerStage.close();
-            woops.display("Register was succesfull", "Account was created successfully!\n \t   Now you can log in \n \t and start learning ^_^");
-        } catch (UsernameAlreadyExistsException e) {
-            registrationMessage.setText(e.getMessage());
-            Stage registerStage = (Stage) RegisterButton.getScene().getWindow();
-            //registerStage.close();
-            woops.display("Register failed", "An account with this username\n \t     already exists :(\n      Please find another one");
+        User user = new User(usernameField.getText(), email_addressField.getText(), phone_numberField.getText(), UserService.encodePassword(usernameField.getText(), passwordField.getText()), (String) role.getValue());
+        if(user.checkUsername(user.getUsername()) && user.checkPassword(passwordField.getText())){
+            try {
+                users.addUser(usernameField.getText(), email_addressField.getText(), phone_numberField.getText(), passwordField.getText(), (String) role.getValue());
+                registrationMessage.setText("The account was created successfully! ^_^");
+                Stage registerStage = (Stage) RegisterButton.getScene().getWindow();
+                registerStage.close();
+                woops.display("Register was succesfull", "Account was created successfully!\n \t   Now you can log in \n \t and start learning ^_^");
+            } catch (UsernameAlreadyExistsException e) {
+                registrationMessage.setText(e.getMessage());
+                Stage registerStage = (Stage) RegisterButton.getScene().getWindow();
+                woops.display("Register failed", "An account with this username\n \t     already exists :(\n      Please find another one");
+            }
+        }
+        else{
+            woops.display("Warning!", "The username must be between 5 - 25 characters\n \t (only letters and numbers allowed).\nThe password must be between 5 - 25 characters");
         }
     }
 

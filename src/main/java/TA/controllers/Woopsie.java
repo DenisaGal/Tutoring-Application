@@ -25,7 +25,7 @@ public class Woopsie {
         layout.getChildren().addAll(label, button);
         layout.setAlignment(Pos.CENTER);
 
-        Scene scene = new Scene(layout, 300, 200);
+        Scene scene = new Scene(layout, 400, 300);
         window.setScene(scene);
         window.showAndWait();
     }

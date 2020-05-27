@@ -87,6 +87,20 @@ public class User {
         return (o instanceof User) && ( ((User) o).username.equals(this.username) && ((User) o).password.equals(this.password) && ((User) o).role.equals(this.role));
     }
 
+    public boolean checkUsername(String username) {
+        if ((username.length() < 5) || (username.length() > 25)) {
+            return false;
+        }
+        else {
+            return username.matches("[a-zA-Z0-9]+");
+        }
+    }
+
+    public boolean checkPassword(String password)
+    {
+        return (password.length() >= 5) && (password.length() <= 25);
+    }
+
     @Override
     public int hashCode() {
         int result = username.hashCode();
