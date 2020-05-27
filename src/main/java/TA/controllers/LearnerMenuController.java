@@ -22,16 +22,16 @@ public class LearnerMenuController {
         this.username = username;
     }
 
-    public void setUsersList(UserService users){
+    public void setUsersList(UserService users) {
         this.users = users;
     }
 
-    public void setSubjectPressed(ActionEvent actionEvent){
+    public void setSubjectPressed(ActionEvent actionEvent) {
         users.addSubject(username, (String) subject.getValue());
     }
 
-    public void setTutorsNames(ActionEvent actionEvent){
-        System.out.println("Teachers: " + users.addTutorsNames((String) subject.getValue()));
+    public void setTutorsNames(ActionEvent actionEvent) {
+        users.addTutorsNames((String) subject.getValue());
     }
 
     public void seeFeedback(ActionEvent actionEvent) {
