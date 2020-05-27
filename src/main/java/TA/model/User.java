@@ -101,6 +101,19 @@ public class User {
         return (password.length() >= 5) && (password.length() <= 25);
     }
 
+    public boolean checkEmailAddress(String email_address){
+        return email_address.contains("@");
+    }
+
+    public boolean checkPhoneNumber(String phone_number){
+        if(phone_number.length() != 10){
+            return false;
+        }
+        else{
+            return phone_number.matches("[0-9]")
+        }
+    }
+
     @Override
     public int hashCode() {
         int result = username.hashCode();
