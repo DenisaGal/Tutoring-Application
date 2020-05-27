@@ -35,8 +35,8 @@ import java.util.Objects;
 public class UserService {
 
     private static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("TAusers.json");
-    //private static final Path USERS_PATH = FileSystemService.getPathToFile("users.json");
+    //private static final Path USERS_PATH = FileSystemService.getPathToFile("TAusers.json");
+    private static final Path USERS_PATH = FileSystemService.getPathToFile("users.json");
 
     public static void loadUsersFromFile() throws IOException {
 
