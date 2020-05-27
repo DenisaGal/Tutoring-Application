@@ -3,6 +3,7 @@ package TA.controllers;
 import TA.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 
 public class LearnerMenuController {
@@ -34,7 +35,22 @@ public class LearnerMenuController {
         users.addTutorsNames((String) subject.getValue());
     }
 
-    public void seeFeedback(ActionEvent actionEvent) {
-        woops.display("Feedback", "You did not receive any feedback at this time."); //will be implemented after give feedback feature for tutor
+
+    public void chatButton(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Chat");
+        alert.setHeaderText(null);
+        alert.setContentText("To be implemented soon");
+
+        alert.showAndWait();
+    }
+
+    public void feedbackButton(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("See Feedback");
+        alert.setHeaderText(null);
+        alert.setContentText("To be implemented soon");
+
+        alert.showAndWait();
     }
 }

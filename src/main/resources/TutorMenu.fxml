@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="Menu" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #266196;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TA.controllers.TutorMenuController">
+<AnchorPane id="Menu" prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #266196;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TA.controllers.TutorMenuController">
    <children>
       <Text fill="WHITE" layoutX="102.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subjects: " textAlignment="CENTER">
          <font>
@@ -53,17 +53,17 @@
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </CheckBox>
-      <Button id="addProof" layoutX="61.0" layoutY="312.0" mnemonicParsing="false" text="Add proof of qualification">
+      <Button id="addProof" layoutX="61.0" layoutY="312.0" mnemonicParsing="false" onAction="#qualificationButton" text="Add proof of qualification">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button id="seeReviews" layoutX="100.0" layoutY="343.0" mnemonicParsing="false" text="See Reviews">
+      <Button id="seeReviews" layoutX="100.0" layoutY="343.0" mnemonicParsing="false" onAction="#seeReviewsButton" text="See Reviews">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button id="Chat" layoutX="113.0" layoutY="375.0" mnemonicParsing="false" text="Chat">
+      <Button id="Chat" layoutX="113.0" layoutY="375.0" mnemonicParsing="false" onAction="#chatButton" text="Chat">
          <font>
             <Font name="Times New Roman Bold Italic" size="12.0" />
          </font>
