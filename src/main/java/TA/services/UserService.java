@@ -7,13 +7,20 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 import TA.model.User;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -67,36 +74,63 @@ public class UserService {
         }
     }
 
-    public static void addTutorsNames(String subject)
+
+    public void addTutorsNames(String subject)
     {
+
 
         TableColumn<TutorsList, String> nameColumn = new TableColumn<>("Username");
         nameColumn.setMinWidth(150);
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("usernameInTable"));
 
+        TableColumn<TutorsList, String> emailColumn = new TableColumn<>("Email");
+        emailColumn.setMinWidth(200);
+        emailColumn.setCellValueFactory(new PropertyValueFactory<>("emailInTable"));
+
         TableColumn<TutorsList, String> phoneNumberColumn = new TableColumn<>("Phone Number");
-        phoneNumberColumn.setMinWidth(100);
+        phoneNumberColumn.setMinWidth(200);
         phoneNumberColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
 
+        TableColumn<TutorsList, Button> reviewButtonColumn = new TableColumn<>("Reviews");
+        phoneNumberColumn.setMinWidth(100);
+        reviewButtonColumn.setCellValueFactory(new PropertyValueFactory<>("reviewButton"));
+
+
+
+
         ObservableList<TutorsList> listTutors = FXCollections.observableArrayList();
+
+        Button reviewButton = new Button();
+
 
         for(User user : users)
             if(Objects.equals(user.getRole(), "Tutor"))
                 for(String teaching: user.getSubjects())
                     if(Objects.equals(subject, teaching))
                     {
-                        listTutors.add(new TutorsList(user.getUsername(), user.getPhone_number()));
+                        listTutors.add(new TutorsList(user.getUsername(), user.getEmail_address(), user.getPhone_number(), reviewButton));
                     }
 
         TableView<TutorsList> table = new TableView<>();
         table.setItems(listTutors);
 
-        table.getColumns().addAll(nameColumn, phoneNumberColumn);
+        table.getColumns().addAll(nameColumn, emailColumn, phoneNumberColumn, reviewButtonColumn);
+        //yas.setOnAction(this);
+
+
+
         Stage tableStage = new Stage();
-        tableStage.setScene(new Scene(table, 250, 300));
+        tableStage.setScene(new Scene(table, 650, 300));
+
         tableStage.show();
 
+
+
     }
+
+    /*public void handle(ActionEvent actionEvent) {
+        System.out.println("YAS");
+    }*/
 
     public boolean containsUser(User user)
     {
